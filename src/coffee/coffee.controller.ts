@@ -11,8 +11,9 @@ export class CoffeeController {
 
   @Get('order')
   aCupOfCoffee() {
+    // return this.coffeeService.getCoffee();
     const coffee = this.coffeeService.getCoffee();
-    const sugar = this.sugarService.addSugar();
+    const sugar = this.sugarService.useSugar();
     return coffee + sugar;
   }
 }

@@ -7,6 +7,6 @@ export class SugarController {
 
   @Get('order')
   addSomeSugar() {
-    return this.sugarService.addSugar();
+    return this.sugarService.useSugar();
   }
 }
