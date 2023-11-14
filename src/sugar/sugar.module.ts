@@ -4,5 +4,6 @@ import { SugarService } from './sugar.service';
 @Module({
   controllers: [SugarController],
   providers: [SugarService],
+  exports: [SugarService],
 })
 export class SugarModule {}

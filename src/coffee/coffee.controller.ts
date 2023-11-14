@@ -1,3 +1,4 @@
+import { SugarService } from 'src/sugar/sugar.service';
 import { CoffeeService } from './coffee.service';
 import { Controller, Get } from '@nestjs/common';
 
@@ -5,10 +6,13 @@ import { Controller, Get } from '@nestjs/common';
 export class CoffeeController {
   constructor(
     private readonly coffeeService: CoffeeService,
+    private readonly sugarService: SugarService,
   ) {}
 
   @Get('order')
   aCupOfCoffee() {
-    return this.coffeeService.getCoffee();
+    const coffee = this.coffeeService.getCoffee();
+    const sugar = this.sugarService.useSugar();
+    return coffee + sugar;
   }
 }
